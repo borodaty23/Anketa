@@ -20,11 +20,14 @@ let getSex = function(){
     
     
     let getFullName = function(){
-    let name = prompt("Введите вашу фамилию имя отчество");
-    while (name === "" || name === null){
+    let name = prompt("Введите ваше имя");
+    let surName = prompt("Введите вашу фамилию");
+    let patronymic = prompt("Введите вашу отчество");
+    
+    while (name === "" || name === null || surName === "" || surName === null || patronymic === "" || patronymic === null){
     name = prompt("Вы ДОЛЖНЫ ввести вашу фамилию имя отчество!!!!");
     }
-    return name;
+    return name + " " + surName + " " + patronymic;
     }
     
     let getYears = function () {
@@ -41,7 +44,8 @@ let getSex = function(){
     let yearsOnDays = years * 365;
     let yearsFromFive = years + 5;
     let pensioner = confirmationPensioner();
-    alert(`Ваше ФИО: ${fullName};
+    alert(`
+    Ваше ФИО: ${fullName};
     Ваш возраст в годах: ${years};
     Ваш возраст в днях: ${yearsOnDays};
     Через 5 лет вам будет: ${yearsFromFive};
