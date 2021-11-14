@@ -1,6 +1,6 @@
 let getSex = function(){
     let sex = confirm("Ваш пол - мужской?");
-        if (sex === true){
+        if (sex){
     return "Мужской"; 
     }else{
     return "Женский";
@@ -8,12 +8,10 @@ let getSex = function(){
     };
     
     let confirmationPensioner = function(){
-    if (gender === "Мужской" && years > 65 ){
+    if (gender === "Мужской" && years > 65  || gender === "Женский" && years > 55 ) {
         return "Да";
-    } else  if (gender === "Женский" && years > 55 ) {
-        return "Да";
-    } else {
-    return "Нет";
+    }else {
+        return "Нет";
     }   
     
     }
@@ -24,8 +22,10 @@ let getSex = function(){
     let surName = prompt("Введите вашу фамилию");
     let patronymic = prompt("Введите вашу отчество");
     
-    while (name === "" || name === null || surName === "" || surName === null || patronymic === "" || patronymic === null){
-    name = prompt("Вы ДОЛЖНЫ ввести вашу фамилию имя отчество!!!!");
+    while (!name || !surName || !patronymic ){
+        name = prompt("Введите ваше имя");
+        surName = prompt("Введите вашу фамилию");
+        patronymic = prompt("Введите вашу отчество");
     }
     return name + " " + surName + " " + patronymic;
     }
